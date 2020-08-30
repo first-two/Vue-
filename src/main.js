@@ -9,6 +9,7 @@ import { Header } from 'mint-ui';
 Vue.component(Header.name, Header);
 // mui库
 import './lib/mui/css/mui.css'
+import './lib/mui/css/icons-extra.css'
 
 
 Vue.config.productionTip = false
