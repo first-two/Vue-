@@ -7,7 +7,7 @@ import store from './store'
 import './css/mint-ui.css'
 import { Header } from 'mint-ui';
 Vue.component(Header.name, Header);
-// mui
+// mui库
 import './lib/mui/css/mui.css'
 
 
