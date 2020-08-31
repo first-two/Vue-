@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <!-- 顶部导航栏 -->
-    <mt-header fixed title="mint-ui"></mt-header>
-    <!-- 路由切换区 -->
-    <router-view/>
+		<mt-header fixed title="mint-ui"></mt-header>
+    <!-- 路由切换区 加个动画效果用transition包起来-->
+	<transition>
+    	<router-view/>
+	</transition>
     <!-- 底部tab -->
     <nav class="mui-bar mui-bar-tab">
-			<router-link tag="a" class="mui-tab-item" to="/home">
+			<router-link tag="a" class="mui-tab-item" to="/shouye">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
@@ -28,6 +30,21 @@
 </template>
 
 <style lang="less">
-  #app{padding-top: 40px;}
+  #app{padding-top: 40px;overflow-x: hidden;}
   .mui-bar a.router-link-active{color: #26a2ff;}
+
+// 动画效果css
+  .v-enter{
+	  opacity:0;
+	  transform: translateX(100%);
+  }
+  .v-leave-to{
+	  opacity:0;
+	  transform: translateX(-100%);
+	  position: absolute;//防止乱抖动
+  }
+  .v-enter-active,
+  .v-leave-active{
+	  transition: all 0.5s ease;
+  }
 </style>
