@@ -2,7 +2,7 @@
   <div id="app">
     <!-- 顶部导航栏 -->
 		<mt-header fixed title="mint-ui"></mt-header>
-    <!-- 路由切换区 加个动画效果用transition包起来-->
+    <!-- 路由切换区 加个动画效果用transition包起来00-->
 	<transition>
     	<router-view/>
 	</transition>
