@@ -8,37 +8,37 @@
       </mt-swipe>
       <!-- 宫格 -->
       <ul class="gezi">
-        <router-link tag="li" to="">
+        <router-link tag="li" to="/shouye/xinw">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
           <span>新闻资讯</span>
 			  </router-link>
-        <router-link tag="li" to="">
+        <router-link tag="li" to="/shouye/tup">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
           <span>图片分享</span>
 			  </router-link>
-        <router-link class="last" tag="li" to="">
+        <router-link class="last" tag="li" to="/shouye/shangp">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
           <span>商品购买</span>
 			  </router-link>
-        <router-link tag="li" to="">
+        <router-link tag="li" to="/shouye/liuy">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
           <span>留言反馈</span>
 			  </router-link>
-        <router-link tag="li" to="">
+        <router-link tag="li" to="/shouye/ship">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
           <span>视频专区</span>
 			  </router-link>
-        <router-link class="last" tag="li" to="">
+        <router-link class="last" tag="li" to="/shouye/lianx">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">
           </span>
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+//引入提示语组件
 import {Toast} from "mint-ui"
 export default {
   name:"first",
@@ -63,7 +64,7 @@ export default {
   },
   methods:{
     getlunbo(){
-      this.axios.get('https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata').then((res)=>{
+      this.axios.get('/home/swiperdata').then((res)=>{
         if(res.data.message.length!=""){
             this.lunboarr = res.data.message;
         }else{

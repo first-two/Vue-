@@ -30,7 +30,7 @@
 </template>
 
 <style lang="less">
-  #app{padding-top: 40px;overflow-x: hidden;}
+  #app{padding-top: 40px;overflow-x: hidden;padding-bottom: 50px;}
   .mui-bar a.router-link-active{color: #26a2ff;}
 
 // 动画效果css
