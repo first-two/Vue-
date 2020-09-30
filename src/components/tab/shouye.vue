@@ -6,7 +6,7 @@
           <img :src="item.image_src">  
         </mt-swipe-item>
       </mt-swipe>
-      <!-- 宫格 -->
+      <!-- 宫格 --> 
       <ul class="gezi">
         <router-link tag="li" to="/shouye/xinw">
           <span>
@@ -26,6 +26,8 @@
           </span>
           <span>商品购买</span>
 			  </router-link>
+
+        
         <router-link tag="li" to="/shouye/liuy">
           <span>
             <img src="https://p4.img.cctvpic.com/photoworkspace/2020/07/24/2020072409470511321.jpg" alt="">

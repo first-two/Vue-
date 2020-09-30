@@ -25,16 +25,25 @@ Vue.filter('dateFormat',function(dataStr,pattern='YYYY-MM-DD HH:mm:ss'){
 // mint-ui库
 import './css/mint-ui.css'
   //按需引入hide组件 swipe组件
-  import { Header, Swipe, SwipeItem,Button} from 'mint-ui';
-  Vue.component(Header.name, Header);
-  Vue.component(Swipe.name, Swipe);
-  Vue.component(SwipeItem.name, SwipeItem);
-  Vue.component(Button.name, Button);
+  // import { Header, Swipe, SwipeItem,Button,Lazyload } from 'mint-ui';
+  // Vue.component(Header.name, Header);
+  // Vue.component(Swipe.name, Swipe);
+  // Vue.component(SwipeItem.name, SwipeItem);
+  // Vue.component(Button.name, Button);
+  // Vue.use(Lazyload);
+  //全部加载,按需引入mint-ui时，延时加载失效，需要吧mint-ui全部引入使用
+  import mintui from 'mint-ui'
+  Vue.use(mintui);
+
 
 
 // mui库
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
+
+//安装图片预览插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 
 Vue.config.productionTip = false

@@ -69,8 +69,9 @@ export default {
             line-height: 40px;
         }
         .yan{
+            font-size: 14px;
             background-color: #fff;
-            line-height: 40px;
+            line-height: 20px;
             text-indent:2rem;
         }
     }
