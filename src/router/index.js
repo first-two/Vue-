@@ -7,12 +7,14 @@ const huiyuan = () => import('../components/tab/huiyuan.vue')
 const gouwc = () => import('../components/tab/gouwc.vue')
 const sousuo = () => import('../components/tab/sousuo.vue')
 
+
 //首页内的组件
 const xinwen = () => import('../components/shouye/xinw.vue')
 const xiangqing = () => import('../components/shouye/xiangqing.vue')
 const tup = () => import('../components/shouye/tup.vue')
 const imgxiangq = () => import('../components/img/imgxiangq.vue')
 const shangpin = () => import('../components/shouye/shangp.vue')
+const jieshao = () => import('../components/goumai/jieshao.vue')
 
 Vue.use(VueRouter)
 
@@ -30,6 +32,7 @@ Vue.use(VueRouter)
     { path: '/shouye/tup',name: 'tup',component: tup},
     { path: '/shouye/imgxiangq/:id',name: 'imgxiangq',component: imgxiangq},
     { path: '/shouye/shangp',name: 'shangpin',component: shangpin},
+    { path: '/shouye/jieshao/:id',name: 'jieshao',component: jieshao},
 ]
 
 const router = new VueRouter({

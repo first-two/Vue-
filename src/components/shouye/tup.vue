@@ -17,7 +17,7 @@
       </div>
     </div>
 
-  <!-- 图片展示区域 -->
+  <!-- 图片展示区域 延时加载min-ui Lazyload-->
     <ul class="list-img">
       <router-link tag="li" :to="'/shouye/imgxiangq/'+43986">
         <img v-lazy="list">

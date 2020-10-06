@@ -1,11 +1,7 @@
 <template>
     <div id="shouye">
       <!-- 轮播区 -->
-      <mt-swipe :auto="0">
-        <mt-swipe-item v-for="item in lunboarr" :key="item.url">
-          <img :src="item.image_src">  
-        </mt-swipe-item>
-      </mt-swipe>
+      <swiper :lunboarr= "lunboarr" :isfull="true"></swiper>
       <!-- 宫格 --> 
       <ul class="gezi">
         <router-link tag="li" to="/shouye/xinw">
@@ -54,12 +50,18 @@
 <script>
 //引入提示语组件
 import {Toast} from "mint-ui"
+//轮播组件
+import swiper from "../swipe/lunbo.vue"
+
 export default {
   name:"first",
   data(){
     return{
       lunboarr:[]
     }
+  },
+  components:{
+    swiper
   },
   created(){
     this.getlunbo();
@@ -83,21 +85,6 @@ export default {
 .mint-swipe{
   height: 200px;
 // cass的使用
-  .mint-swipe-item {
-    &:nth-child(1){
-      background-color:#00cc00;
-    }
-    &:nth-child(2){
-      background-color:#cccccc;
-    }
-    &:nth-child(3){
-      background-color:#c9c8cc;
-    }
-  }
-  img{
-    width: 100%;
-    height: 100%;
-  }
 }
 .gezi li{
   list-style: none;
