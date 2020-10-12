@@ -23,7 +23,7 @@
               <p class="price">
                 市场价：<del>${{spining.goods_price}}</del>&nbsp;&nbsp;销售价：<span class="now_price">${{spining.goods_number}}</span>
               </p>
-              <p>购买数量<numbox></numbox></p>
+              <p>购买数量<numbox @gitcont = "gitchuancan" :max="spining.cat_id" ></numbox></p>
               <p>
                 <mt-button type="primary" size="small" >立即购买</mt-button>
                 <mt-button type="danger" size="small" @click="addmai">加入购物车</mt-button>
@@ -37,7 +37,7 @@
          <div class="mui-card-header">商品参数</div>
           <div class="mui-card-content">
             <div class="mui-card-content-inner">
-              <p>商品货号：{{spining.add_time}}</p>
+              <p>商品货号：{{spining.cat_id}}</p>
               <p>库存情况：{{spining.add_time}}</p>
               <p>上架时间：{{spining.add_time}}</p>
             </div>
@@ -66,7 +66,8 @@ export default {
       lunboarr:[],
       id:this.$route.params.id,//获取链接中传递的参数
       spining:{},
-      ballFlag:false//控制小球的显隐
+      ballFlag:false,//控制小球的显隐，
+      goushu:1//默认购买数量
     }
   },
   components:{
@@ -104,6 +105,11 @@ export default {
     addmai(){
       //添加高购物车
       this.ballFlag = !this.ballFlag
+      //得到一个这种对象{id:商品id,count:数量,price:单价,selected:false}
+      //拼接出一个要加入Store的对象
+      var goodsinfo={id:this.id,count:this.goushu,price:this.spining.goods_price,selected:true};
+      //调用vuex组件中的store内的方法
+      this.$store.commit('addcar',goodsinfo)
     },
     beforeEnter(el){
       el.style.transform="translate(0,0)"
@@ -124,6 +130,11 @@ export default {
     },
     afterEnter(el){
       this.ballFlag = !this.ballFlag
+    },
+    // 组件间的传参，把购买数量传递到其他组件
+    //当子组件把选中的数量传递给父组件时，把数量保存在data上
+    gitchuancan(count){
+      this.goushu = count
     }
 
   }

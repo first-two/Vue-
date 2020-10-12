@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <!-- 顶部导航栏 -->
-		<mt-header fixed title="mint-ui"></mt-header>
+		<mt-header fixed title="mint-ui">
+			<span  slot="left" @click="goback" v-show="flag">
+				<mt-button icon="back">返回</mt-button>
+			</span>
+		</mt-header>
     <!-- 路由切换区 加个动画效果用transition包起来00-->
 	<transition>
     	<router-view/>
@@ -18,7 +22,7 @@
 			</router-link>
 			<router-link tag="a" class="mui-tab-item1" to="/gouwc">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-					<span class="mui-badge" id="badge">3</span></span>
+					<span class="mui-badge" id="badge">{{$store.getters.gitall}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link tag="a" class="mui-tab-item1" to="/sousuo">
@@ -29,7 +33,33 @@
 
   </div>
 </template>
-
+<script>
+	export default {
+		data(){
+			return{
+				flag:false
+			}
+		},
+		created(){
+			this.flag = this.$route.path==="/shouye"?false:true;
+		},
+		methods:{
+			//点击后退
+			goback(){
+				this.$router.go(-1)
+			}
+		},
+		watch:{
+			"$route.path":function(newVal){
+				if(newVal === "/shouye"){
+					this.flag=false
+				}else{
+					this.flag=true
+				}
+			}
+		}
+	}
+</script>
 <style lang="less">
   #app{padding-top: 40px;overflow-x: hidden;padding-bottom: 50px;}
   .mui-bar a.router-link-active{color: #26a2ff;}

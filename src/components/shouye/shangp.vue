@@ -58,6 +58,7 @@ export default {
       this.axios.get('/goods/search?cid='+5+'&pagenum='+this.pagenum+'&pagesize='+this.pagesize).then((res)=>{
         if(res.data.message.length!=""){
             //this.listshuzu = res.data.message.goods;
+            //不能覆盖原数组，需要把新数据拼接上去
             this.listshuzu = this.listshuzu.concat(res.data.message.goods);
         }else{
            Toast("获取失败")
@@ -69,7 +70,6 @@ export default {
       this.getlunbo();
     },
     gogo(id){
-      console.log(this)
       //使用js的形式进行路由导航
       //注意，一定要区分this.$route和this.$router这两个参数
       //this.$route 是路由 参数对象，所有路由中的参数，params,query都属于他

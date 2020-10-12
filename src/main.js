@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
 // 接口的解析的两张方法axios和vue-resource
 // import axios from './axios'
 // Vue.prototype.axios=axios;
