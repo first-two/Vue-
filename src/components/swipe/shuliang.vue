@@ -36,7 +36,7 @@ export default {
     mui('.mui-numbox').numbox()
   },
   methods:{
-    //文本框发生改变就之心该方法 先在DOM中使用ref标签进行了注册，然后便可以通过’this.$refs’再跟注册时的名称来引用DOM元素了
+    //文本框发生改变就调用该方法 先在DOM中使用ref标签进行了注册，然后便可以通过’this.$refs’再跟注册时的名称来引用DOM元素了
     num(){
         //console.log(this.$refs.numbox.value)
         this.$emit("gitcont",parseInt(this.$refs.numbox.value))

@@ -41,7 +41,7 @@
 			}
 		},
 		created(){
-			this.flag = this.$route.path==="/shouye"?false:true;
+			this.flag = this.$route.path==="/shouye"?false:true; 
 		},
 		methods:{
 			//点击后退

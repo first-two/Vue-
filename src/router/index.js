@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// 异步加载路由
+// 异步加载路由  00
 const shouye = () => import('../components/tab/shouye.vue')
 const huiyuan = () => import('../components/tab/huiyuan.vue')
 const gouwc = () => import('../components/tab/gouwc.vue')
